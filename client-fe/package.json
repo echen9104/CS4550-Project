@@ -1,0 +1,24 @@
+{
+  "name": "stockx-fe",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.24",
+    "@types/react-dom": "^18.0.8",
+    "@vitejs/plugin-react": "^2.2.0",
+    "less": "^4.1.3",
+    "less-loader": "^11.1.0",
+    "sass-resources-loader": "^2.2.5",
+    "vite": "^3.2.3"
+  }
+}
