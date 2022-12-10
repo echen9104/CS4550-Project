@@ -1,3 +1,5 @@
+import './footer.less'
+
 const Footer = () => {
     return (
         <footer>

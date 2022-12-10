@@ -1,5 +1,37 @@
+@import './assets/var.less';
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+html,
+body,
+.common {
+    margin: 0;
+    padding: 0;
+    font-size: @md-size;
+    color: @default-color;
+}
+
+body {
+    background-color: #f1f1f1;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
 }
