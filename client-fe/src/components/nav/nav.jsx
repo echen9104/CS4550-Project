@@ -1,22 +1,27 @@
 import './nav.less'
 
+import { Link } from 'react-router-dom'
+
 const Nav = () => {
     return (
         <div className="header-box">
-            <div className="logo-box">StockX</div>
+            <div className="logo-box">
+                <Link to="/">StockX</Link>
+            </div>
             <div className="right-box">
+                <div className="search-box">
+                    <img src="/images/icon/search-icon.png" alt="" />
+                    <input type="text" placeholder="Search for brand, color, etc." />
+                </div>
                 <ul className="nav-box">
-                    <li className="nav-item">Browse</li>
-                    <li className="nav-item">News</li>
-                    <li className="nav-item">About</li>
-                    <li className="nav-item">Help</li>
-                    <li className="nav-item">Sell</li>
+                    <Link to="/product" className="nav-item">Product</Link>
                 </ul>
                 <div className="opt-box">
-                    <a href="">Login</a>
-                    <a href="">Sign Up</a>
+                    <Link to="/login" className="btn login">Login</Link>
+                    <Link to="/register" className="btn bg-blank register">Sign Up</Link>
                 </div>
             </div>
+           
         </div>
     )
 }

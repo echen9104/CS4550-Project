@@ -1,13 +1,6 @@
 {
   "dependencies": {
-    "antd": "^5.0.5",
-    "axios": "^1.2.1",
-    "react-router": "^6.4.5",
-    "react-router-dom": "^6.4.5",
     "sneaks-api": "^1.2.3",
     "stockx-scraper": "^2.0.2"
-  },
-  "devDependencies": {
-    "http-proxy-middleware": "^2.0.6"
   }
 }

@@ -1,17 +1,18 @@
 import { useState } from 'react'
-import Nav from '@/components/nav/nav'
-import Footer from '@/components/footer/footer'
-import './app.less'
+import Layout from './layout/layout'
+import { HashRouter as Router } from 'react-router-dom'
+
 
 function App() {
     const [count, setCount] = useState(0)
 
     return (
-        <div className="App">
-            <Nav></Nav>
-            <div className="view-box"></div>
-            <Footer></Footer>
-        </div>
+        <Router>
+            <div className="App">
+                <Layout></Layout>
+            </div>
+        </Router>
+        
     )
 }
 
