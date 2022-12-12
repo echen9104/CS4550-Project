@@ -1,8 +1,10 @@
 import './nav.less'
 
 import { Link } from 'react-router-dom'
+import UserBox from '@/components/userBox/userBox'
 
 const Nav = () => {
+
     return (
         <div className="header-box">
             <div className="logo-box">
@@ -16,10 +18,7 @@ const Nav = () => {
                 <ul className="nav-box">
                     <Link to="/product" className="nav-item">Product</Link>
                 </ul>
-                <div className="opt-box">
-                    <Link to="/login" className="btn login">Login</Link>
-                    <Link to="/register" className="btn bg-blank register">Sign Up</Link>
-                </div>
+                <UserBox></UserBox>
             </div>
            
         </div>
