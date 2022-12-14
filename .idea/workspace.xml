@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76e84196-b657-4275-98cb-3cf75169afba" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/client-fe/src/modules/search/search-details.js" beforeDir="false" afterPath="$PROJECT_DIR$/client-fe/src/modules/search/search-details.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-fe/src/modules/search/search-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client-fe/src/modules/search/search-reducer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-fe/src/modules/search/search-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/client-fe/src/modules/search/search-service.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-fe/src/modules/search/search-thunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/client-fe/src/modules/search/search-thunk.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-fe/src/modules/search/search.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client-fe/src/modules/search/search.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client-fe/src/router/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client-fe/src/router/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +48,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670791779714</updated>
-      <workItem from="1670791781308" duration="13819000" />
+      <workItem from="1670791781308" duration="14557000" />
     </task>
     <servers />
   </component>
