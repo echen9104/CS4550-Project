@@ -6,6 +6,7 @@ import Register from '@/modules/auth/register'
 import Detail from '@/modules/detail/detail'
 import Profile from '@/modules/profile/profile'
 import Product from '@/modules/product/product'
+import Search from "../modules/search/search"
 
 const UseRoute = () => useRoutes([
     {
@@ -15,6 +16,10 @@ const UseRoute = () => useRoutes([
     {
         path: '/home',
         element: <Home />
+    },
+    {
+      path: '/search',
+      element: <Search />
     },
     {
         path: '/login',
