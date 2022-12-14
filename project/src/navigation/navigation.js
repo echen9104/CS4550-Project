@@ -4,7 +4,7 @@ const Navigation = () => {
     return(
         <ul className="nav nav-pills">
             <div className="row fs-3">
-                <li className={`nav-item col-auto`}>
+                <li className={`nav-item active col-auto`}>
                     <Link to="/">
                         Home
                     </Link>

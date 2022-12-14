@@ -4,7 +4,9 @@ import React from 'react';
 import { BrowserRouter, Routes } from 'react-router-dom';
 import { Route } from 'react-router';
 import Home from './home/home';
-import Search from './search/search'
+import Search from './search/search';
+import Login from "./users/login";
+import Register from "./users/register";
 import Navigation from "./navigation/navigation";
 
 function App() {
@@ -20,6 +22,8 @@ function App() {
                   <Routes>
                       <Route index element={<Home/>}/>
                       <Route path="/search" element={<Search/>}/>
+                      <Route path="/login" element={<Login/>}/>
+                      <Route path="/register" element={<Register/>}/>
                   </Routes>
               </BrowserRouter>
           </div>
