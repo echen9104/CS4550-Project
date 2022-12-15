@@ -15,6 +15,7 @@ import Profile from "./users/profile";
 import Navigation from "./navigation/navigation";
 import usersReducer from "./users/users-reducer";
 import searchReducer from "./search/search-reducer";
+import SearchDetails from "./search/search-details";
 
 const store = configureStore({
     reducer: {
@@ -39,6 +40,7 @@ function App() {
                       <Route path="/login" element={<Login/>}/>
                       <Route path="/register" element={<Register/>}/>
                       <Route path="/users" element={<Users/>}/>
+                      <Route path="/details/:skuID" element={<SearchDetails/>}/>
                       <Route path="/profile" element={<Profile/>}/>
                   </Routes>
               </BrowserRouter>
