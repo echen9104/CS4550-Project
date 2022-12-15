@@ -3,7 +3,7 @@ import './UserBox.less'
 import { Link } from 'react-router-dom'
 
 const UserBox = () => {
-    const loginState = false
+    const loginState = true
     return (
         <>
             {
@@ -18,10 +18,11 @@ const UserBox = () => {
                     :
                         (
                             <div className="user-box">
-                                <div className="user-name">username</div>
+                                <div className="user-name">qiuyuxuanq</div>
                                 <div className="option-wrap">
                                     <ul className="option-box">
                                         <a className="option-item">Logout</a>
+                                        <Link className="option-item" to="/profile">Profile</Link>
                                     </ul>
                                 </div>
                             </div>

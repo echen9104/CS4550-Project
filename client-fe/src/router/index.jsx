@@ -7,6 +7,9 @@ import Detail from '@/modules/detail/detail'
 import Profile from '@/modules/profile/profile'
 import Product from '@/modules/product/product'
 
+import UserInfo from '../modules/profile/components/info'
+import Like from '../modules/profile/components/like'
+
 const UseRoute = () => useRoutes([
     {
         path: '/',
@@ -30,7 +33,21 @@ const UseRoute = () => useRoutes([
     },
     {
         path: '/profile',
-        element: <Profile />
+        element: <Profile />,
+        children: [
+            {
+                path: '',
+                element: <Navigate to="/profile/info" />
+            },
+            {
+                path: 'info',
+                element: <UserInfo />
+            },
+            {
+                path: 'like',
+                element: <Like />
+            },
+        ]
     },
     {
         path: '/product',

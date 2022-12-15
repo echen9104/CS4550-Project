@@ -5,12 +5,12 @@ const BaseArea = (props) => {
     let { title, viewMoreUrl, content } = props
 
     return (
-        <div class="area-box">
-            <div class="card-header">
-                <div class="card-title">{ title }</div>
+        <div className="area-box">
+            <div className="card-header">
+                <div className="card-title">{ title }</div>
                 <Link to={viewMoreUrl}>More</Link>
             </div>
-            <div class="card-content">
+            <div className="card-content">
                 <>
                     { content }
                 </>
