@@ -1,8 +1,11 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootswatch/dist/lux/bootstrap.min.css';
+import './App.css';
 import React from 'react';
 import { BrowserRouter, Routes } from 'react-router-dom';
 import { Route } from 'react-router';
+import { configureStore } from "@reduxjs/toolkit";
+import { Provider } from "react-redux";
 import Home from './home/home';
 import Search from './search/search';
 import Login from "./users/login";
@@ -10,6 +13,13 @@ import Register from "./users/register";
 import Users from "./users";
 import Profile from "./users/profile";
 import Navigation from "./navigation/navigation";
+import usersReducer from "./users/users-reducer";
+
+const store = configureStore({
+    reducer: {
+        users: usersReducer,
+    }
+})
 
 function App() {
   return (
