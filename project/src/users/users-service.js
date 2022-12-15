@@ -1,7 +1,6 @@
 import axios from "axios";
 
 const USER_API_URL = 'http://localhost:4000/users'
-// const USER_API_URL = 'mongodb+srv://cs4550:project@postings.u9fsees.mongodb.net/users?retryWrites=true&w=majority'
 const BASE_API_URL = 'mongodb+srv://cs4550:project@postings.u9fsees.mongodb.net/?retryWrites=true&w=majority'
 
 const api = axios.create({withCredentials: true});

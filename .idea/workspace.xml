@@ -2,15 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76e84196-b657-4275-98cb-3cf75169afba" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/project/src/search/search-reducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/search/search-thunk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/search/searchings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/project/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/project/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/users/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/users/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/users/users-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/users/users-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/search/search-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/search/search-service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/search/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/search/search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/users/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/users/login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/users/users-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/users/users-service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/users/users-thunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/users/users-thunk.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +65,7 @@
       <option name="presentableId" value="Default" />
       <updated>1670791779714</updated>
       <workItem from="1670791781308" duration="17152000" />
-      <workItem from="1671051194428" duration="18241000" />
+      <workItem from="1671051194428" duration="29710000" />
     </task>
     <servers />
   </component>
@@ -87,7 +88,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/project/src/App.js</url>
-          <line>45</line>
+          <line>47</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

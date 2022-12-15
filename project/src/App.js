@@ -14,10 +14,12 @@ import Users from "./users";
 import Profile from "./users/profile";
 import Navigation from "./navigation/navigation";
 import usersReducer from "./users/users-reducer";
+import searchReducer from "./search/search-reducer";
 
 const store = configureStore({
     reducer: {
         users: usersReducer,
+        shoes: searchReducer,
     }
 })
 
