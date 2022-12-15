@@ -1,23 +1,25 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useState} from "react";
 import {loginThunk} from "./users-thunk";
-import {Navigate} from "react-router";
+import {Navigate} from 'react-router-dom';
 
 const Login = () => {
     const {currentUser} = useSelector((state) => state.users)
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const dispatch = useDispatch()
+    // const history = useHistory()
     const handleLoginBtn = () => {
         try {
+            console.log("Attempting to log in")
             dispatch(loginThunk({username, password}))
-            // navigate('/profile')
+            console.log("Successfully logged in as ")
         } catch (e) {
-
+            console.log(e)
         }
-        if (currentUser) {
-            return (<Navigate to={'/profile'}/>)
-        }
+    }
+    if (currentUser) {
+        return (<Navigate to="/profile" />);
     }
     return (
         <>
