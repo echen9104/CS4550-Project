@@ -6,7 +6,7 @@ import React from "react";
 const Users = () => {
     const {users, loading} = useSelector((state) => state.users)
     const dispatch = useDispatch()
-    useEffect(() => {dispatch(findAllUsersThunk)}, [])
+    useEffect(() => {dispatch(findAllUsersThunk())}, [])
     console.log(users)
     return(
         <>
