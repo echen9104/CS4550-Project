@@ -6,7 +6,6 @@ const Search = () => {
                 <input className="form-control w-75"/>
                 <button className="btn btn-primary float-right">Search</button>
             </div>
-
         </>
     )
 }
