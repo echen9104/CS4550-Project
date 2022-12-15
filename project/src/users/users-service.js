@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const USER_API_URL = 'mongodb+srv://cs4550:project@postings.u9fsees.mongodb.net/users?retryWrites=true&w=majority'
+const USER_API_URL = 'localhost:4000/users'
+// const USER_API_URL = 'mongodb+srv://cs4550:project@postings.u9fsees.mongodb.net/users?retryWrites=true&w=majority'
 const BASE_API_URL = 'mongodb+srv://cs4550:project@postings.u9fsees.mongodb.net/?retryWrites=true&w=majority'
 
 const api = axios.create({withCredentials: true});
@@ -32,11 +33,10 @@ export const profile = async () => {
 }
 
 export const findAllUsers = async () => {
+    console.log('4')
     const response = await axios.get(USER_API_URL)
+    console.log(response.data)
+    console.log('3')
     return response.data
 }
-
-export const createUser = () => {}
-const deleteUser = () => {}
-const updateUser = () => {}
 

@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76e84196-b657-4275-98cb-3cf75169afba" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/project/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/project/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/users/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/users/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/users/users-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/users/users-reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/users/users-service.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/users/users-service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/users/users-thunk.js" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/users/users-thunk.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,10 +43,18 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/ericchen/2022/fall/webdev/CS4550-Project",
+    "last_opened_file_path": "/Users/ericchen/2022/fall/webdev/CS4550-Project/project/src/images/home-images",
     "nodejs_package_manager_path": "npm"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/project/src/images/home-images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/project/src/images/home-images" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -48,7 +63,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1670791779714</updated>
-      <workItem from="1670791781308" duration="16080000" />
+      <workItem from="1670791781308" duration="17152000" />
+      <workItem from="1671051194428" duration="18241000" />
     </task>
     <servers />
   </component>
@@ -65,5 +81,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/project/src/App.js</url>
+          <line>45</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

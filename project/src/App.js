@@ -23,8 +23,8 @@ const store = configureStore({
 
 function App() {
   return (
-      <>
-          <div className="container mt-4 mb-4">
+      <div className="container mt-4 mb-4">
+          <Provider store={store}>
               <h1 className="text-center">ShoeScan</h1>
               <h4 className="text-center">Buy and sell sneakers</h4>
               <hr/>
@@ -40,8 +40,8 @@ function App() {
                       <Route path="/profile" element={<Profile/>}/>
                   </Routes>
               </BrowserRouter>
-          </div>
-      </>
+          </Provider>
+      </div>
   );
 }
 
