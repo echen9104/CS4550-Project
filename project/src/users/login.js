@@ -17,9 +17,9 @@ const Login = () => {
         } catch (e) {
             console.log(e)
         }
-        if (currentUser) {
-            return (<Navigate to="/profile" />);
-        }
+    }
+    if (currentUser) {
+        return (<Navigate to="/profile" />);
     }
     return (
         <>

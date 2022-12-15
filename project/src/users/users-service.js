@@ -2,7 +2,7 @@ import axios from "axios";
 
 const USER_API_URL = 'http://localhost:4000/users'
 // const USER_API_URL = 'mongodb+srv://cs4550:project@postings.u9fsees.mongodb.net/users?retryWrites=true&w=majority'
-const BASE_API_URL = 'mongodb+srv://cs4550:project@postings.u9fsees.mongodb.net/?retryWrites=true&w=majority'
+const BASE_API_URL = 'http://localhost:4000'
 
 const api = axios.create({withCredentials: true});
 
@@ -13,15 +13,15 @@ export const findUserById = async (uid) => {
 }
 
 export const register = async (user) => {
-    const response = await api.post(`${USER_API_URL}`, user)
+    const response = await api.post(`${BASE_API_URL}/register`, user)
     const newUser = response.data
-    console.log(newUser)
     return newUser
 }
 
 export const login = async (user) => {
-    const response = await api.post(`${USER_API_URL}`, user)
-    return response.data
+    const response = await api.post(`${BASE_API_URL}/login`, user)
+    const tempt = response.data
+    return tempt
 }
 
 export const logout = async () => {
