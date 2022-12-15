@@ -7,6 +7,8 @@ import Home from './home/home';
 import Search from './search/search';
 import Login from "./users/login";
 import Register from "./users/register";
+import Users from "./users";
+import Profile from "./users/profile";
 import Navigation from "./navigation/navigation";
 
 function App() {
@@ -24,6 +26,8 @@ function App() {
                       <Route path="/search" element={<Search/>}/>
                       <Route path="/login" element={<Login/>}/>
                       <Route path="/register" element={<Register/>}/>
+                      <Route path="/users" element={<Users/>}/>
+                      <Route path="/profile" element={<Profile/>}/>
                   </Routes>
               </BrowserRouter>
           </div>

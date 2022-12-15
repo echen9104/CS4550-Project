@@ -15,7 +15,7 @@ const Navigation = () => {
                     </Link>
                 </li>
                 <li className={`nav-item col-auto`}>
-                    <Link to="/user">
+                    <Link to="/users">
                         Users
                     </Link>
                 </li>
