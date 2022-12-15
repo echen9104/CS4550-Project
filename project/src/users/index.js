@@ -8,14 +8,14 @@ const Users = () => {
     const {users, loading} = useSelector((state) => state.users)
     const dispatch = useDispatch()
     useEffect(() => {dispatch(findAllUsersThunk())}, [])
-    console.log(users)
+
     return(
         <>
             <h1>Users</h1>
             <div className="list-group">
                 {
                     users.map((user) => { return(
-                        <Link to={`/profile/${user._id}`} className="list-group-item" key={user.id}>
+                        <Link to={`/profile/${user._id}`} className="list-group-item border border-primary" key={user._id}>
                             {user.username}
                         </Link>)
                     })

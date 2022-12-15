@@ -7,13 +7,14 @@ import {findShoeBySkuThunk} from "./search-thunk";
 const SearchDetails = () => {
     const {skuID} = useParams();
     const {details} = useSelector((state) => state.shoes);
+    const {postings} = useSelector((state) => state.postings)
     const {currentUser} = useSelector((state) => state.users);
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(findShoeBySkuThunk(skuID))
     },[])
 
-    const first = searchings[1]
+    const first = searchings[0]
     return (
         <>
             <h1>{first.name}</h1>
@@ -35,7 +36,7 @@ const SearchDetails = () => {
                     </div>
                     <br/>
                     <div className="">
-                        Estimate market value: ${first.estimatedMarketValue}
+                        Estimated market value: ${first.estimatedMarketValue}
                     </div>
                 </div>
             </div>

@@ -28,7 +28,7 @@ const Search = () => {
             <ul className="mt-2 list-group">
                 {
                     Searchings && Searchings.map((shoe) =>
-                        <li key={shoe.id} className="list-group-item">
+                        <li key={shoe.id} className="list-group-item border border-primary">
                             <Link to={`/details/${shoe.sku}`}>
                                 <img width="100px" height="100px"
                                      src={shoe.image.small} alt="No image found"/>
