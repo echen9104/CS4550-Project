@@ -13,13 +13,14 @@ export const findUserById = async (uid) => {
 }
 
 export const register = async (user) => {
-    const response = await api.post(`${BASE_API_URL}/register`, user)
+    const response = await api.post(`${USER_API_URL}`, user)
     const newUser = response.data
+    console.log(newUser)
     return newUser
 }
 
 export const login = async (user) => {
-    const response = await api.post(`${BASE_API_URL}/login`, user)
+    const response = await api.post(`${USER_API_URL}`, user)
     return response.data
 }
 

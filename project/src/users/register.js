@@ -1,10 +1,10 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useState} from "react";
-import {loginThunk, registerThunk} from "./users-thunk";
-import {Navigate} from "react-router";
+import {registerThunk} from "./users-thunk";
+import {Navigate} from 'react-router-dom';
 
 const Register = () => {
-    const {newUser} = useSelector((state) => state.users)
+    const {currentUser} = useSelector((state) => state.users)
     const [email, setEmail] = useState('')
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -13,12 +13,16 @@ const Register = () => {
     const dispatch = useDispatch()
     const handleRegisterBtn = () => {
         try {
+            console.log("Attempting to register User")
             dispatch((registerThunk({email, username, password, firstName, lastName})))
-        } catch (e) {}
+            console.log("User is successfully register")
+        } catch (e) {
+            console.log(e)
+        }
     }
 
-    if (newUser) {
-        return (<Navigate to={'/profile'}/>)
+    if (currentUser) {
+        return (<Navigate to="/profile" />);
     }
     return (
         <>
