@@ -13,12 +13,10 @@ const searchReducer = createSlice({
     reducers: {},
     extraReducers: {
         [findShoeBySearchTermThunk.fulfilled]: (state, action) => {
-            console.log(action.payload)
             state.shoes = action.payload
         },
         [findShoeBySkuThunk.fulfilled]: (state, action) => {
-            console.log(action.payload)
-            state.details = action.payload
+            state.details = action.payload[0]
         }
     }
 })

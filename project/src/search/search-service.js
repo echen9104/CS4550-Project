@@ -11,12 +11,8 @@
 //         }
 //     };
 //
-//     axios.request(options).then(function (response) {
-//         console.log(response.data.results)
-//         return response.data.results
-//     }).catch(function (error) {
-//         console.error(error);
-//     });
+//     const response = await axios.request(options)
+//     return response.data.results
 // }
 //
 // export const findShoeBySku = async (skuID) => {
@@ -30,10 +26,6 @@
 //         }
 //     };
 //
-//     axios.request(options).then(function (response) {
-//         console.log(response.data.results)
-//         return response.data.results
-//     }).catch(function (error) {
-//         console.error(error);
-//     });
+//     const response = await axios.request(options)
+//     return response.data.results
 // }

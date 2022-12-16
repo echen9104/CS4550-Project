@@ -1,10 +1,10 @@
 import {useNavigate, useParams} from "react-router";
 import {useDispatch, useSelector} from "react-redux";
-import searchings from './searchings.json'
 import {useEffect, useState} from "react";
 import {findShoeBySkuThunk} from "./search-thunk";
 import {findPostingsBySkuThunk,createPostingThunk,deletePostingThunk} from "../postings/postings-thunk";
 import {Link} from "react-router-dom";
+import searchings from './searchings.json'
 
 const SearchDetails = () => {
     const navigate = useNavigate();
@@ -18,8 +18,6 @@ const SearchDetails = () => {
         dispatch(findShoeBySkuThunk(skuID))
         dispatch(findPostingsBySkuThunk(skuID))
     },[])
-
-    const first = searchings[0]
 
     const handlePostListingBtn = () => {
         dispatch(createPostingThunk({
@@ -35,8 +33,11 @@ const SearchDetails = () => {
         navigate('/thanks')
     }
 
+    // const first = details
+    const first = searchings[1]
     return (
         <>
+            first &&
             <h1>{first.name}</h1>
             {/*Shoe image with some description of the shoe*/}
             <div className="row">

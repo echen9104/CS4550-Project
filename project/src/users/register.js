@@ -30,10 +30,10 @@ const Register = () => {
     return (
         <>
             <h1 className="text-center">Register here</h1>
-            <div class='container position-relative pt-5'>
-                <div class={'row'}>
-                    <div class={'col-md-4'}>
-                        <div class={'row hidden-mob'}>
+            <div className='container position-relative pt-5'>
+                <div className={'row'}>
+                    <div className={'col-md-4'}>
+                        <div className={'row hidden-mob'}>
                             <div className={"pic1"}>
                                 <img src={"https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"} width={"250px"} alt={"shoe"} />
                             </div>
@@ -42,7 +42,7 @@ const Register = () => {
                             </div>
                         </div>
                     </div>
-                    <div class={'col-lg-8 input-item'}>
+                    <div className={'col-lg-8 input-item'}>
                         <input onChange={(e) => setEmail(e.target.value)}
                                className="form-control border border-primary w-50 offset-3"
                                placeholder="Email" value={email} type="email" required/>

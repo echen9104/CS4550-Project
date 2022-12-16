@@ -11,7 +11,6 @@ const Search = () => {
     useEffect(() => {
         dispatch(findShoeBySearchTermThunk(searchTerm))}, [])
 
-    console.log(shoes)
     return(
         <>
             <div className="input-group">
@@ -25,9 +24,9 @@ const Search = () => {
                     Search
                 </button>
             </div>
-            <ul className="mt-2 list-group">
+            <ul className="mt-4 list-group">
                 {
-                    Searchings && Searchings.map((shoe) =>
+                    shoes && shoes.map((shoe) =>
                         <li key={shoe.id} className="list-group-item border border-primary">
                             <Link to={`/details/${shoe.sku}`}>
                                 <img width="100px" height="100px"
