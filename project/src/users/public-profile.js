@@ -2,18 +2,19 @@ import {useParams} from "react-router";
 import {useSelector, useDispatch} from "react-redux";
 import {useEffect} from "react";
 import {findUserByIdThunk} from "./users-thunk";
-import {findPostingsByUserThunk} from "../postings/postings-thunk";
+import {deletePostingThunk, findPostingsByUserThunk} from "../postings/postings-thunk";
 import {Link} from "react-router-dom";
 
 const PublicProfile = () => {
     const {uid} = useParams();
-    const {publicProfile} = useSelector((state) => state.users);
+    const {publicProfile, currentUser} = useSelector((state) => state.users);
     const {postings} = useSelector((state) => state.postings);
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(findUserByIdThunk(uid))
         dispatch(findPostingsByUserThunk(uid))
     }, [])
+
 
     return (
         <>
@@ -24,9 +25,17 @@ const PublicProfile = () => {
                 {
                     postings && postings.map((post) =>
                         <li key={post._id} className="list-group-item">
+                            <img src={post.image} height={100}/>
                             <Link to={`/details/${post.skuID}`}>
-                                ${post.asking} for {post.skuID}
+                                ${post.asking} for {post.name}
                             </Link>
+                            {
+                                currentUser && currentUser.role === 'Admin' &&
+                                <button className="btn btn-danger float-end"
+                                        onClick={() => {dispatch(deletePostingThunk(post._id))}}>
+                                    Remove
+                                </button>
+                            }
                         </li>
                     )
                 }

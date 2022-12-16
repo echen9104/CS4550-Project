@@ -18,9 +18,12 @@ export const register = async (user) => {
 }
 
 export const login = async (user) => {
-    const response = await api.post(`${BASE_API_URL}/login`, user)
-    const tempt = response.data
-    return tempt
+    try {
+        const response = await api.post(`${BASE_API_URL}/login`, user)
+        return response.data
+    } catch(e) {
+        alert('Incorrect username or password, please try again.')
+    }
 }
 
 export const logout = async () => {

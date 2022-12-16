@@ -27,7 +27,7 @@ const Login = () => {
             <input onChange={(e) => setUsername(e.target.value)}
                    className="form-control border border-primary w-50 offset-3"
                    placeholder="Username" value={username}/>
-            <input onChange={(e) => setPassword(e.target.value)}
+            <input onChange={(e) => setPassword(e.target.value)} type="password"
                    className="mt-3 form-control border border-primary w-50 offset-3"
                    placeholder="Password" value={password}/>
             <button className="btn btn-primary mt-3 offset-3" onClick={handleLoginBtn}>

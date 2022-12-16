@@ -2,7 +2,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {logoutThunk} from "./users-thunk";
 import {useNavigate} from "react-router";
 import {Link} from "react-router-dom";
-import {findPostingsByUserThunk} from "../postings/postings-thunk";
+import {deletePostingThunk, findPostingsByUserThunk} from "../postings/postings-thunk";
 import {useEffect} from "react";
 
 const Profile = () => {
@@ -37,6 +37,10 @@ const Profile = () => {
                                  src={post.image}/>
                             <Link to={`/details/${post.skuID}`}>
                                 ${post.asking} for {post.name}
+                                <button className="btn btn-danger float-end"
+                                        onClick={() => {dispatch(deletePostingThunk(post._id))}}>
+                                    Remove
+                                </button>
                             </Link>
                         </li>
                     )
