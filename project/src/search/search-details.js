@@ -4,12 +4,13 @@ import {useEffect, useState} from "react";
 import {findShoeBySkuThunk} from "./search-thunk";
 import {findPostingsBySkuThunk,createPostingThunk,deletePostingThunk} from "../postings/postings-thunk";
 import {Link} from "react-router-dom";
+import searchings from "./searchings.json";
 
 const SearchDetails = () => {
     const navigate = useNavigate();
     const {skuID} = useParams();
     const [post, setPosting] = useState(0)
-    const {details} = useSelector((state) => state.shoes);
+    const {details, loading} = useSelector((state) => state.shoes);
     const {postings} = useSelector((state) => state.postings)
     const {currentUser} = useSelector((state) => state.users);
     const dispatch = useDispatch();
@@ -21,9 +22,9 @@ const SearchDetails = () => {
     const handlePostListingBtn = () => {
         dispatch(createPostingThunk({
             asking: post,
-            skuID: first.sku,
-            name: first.name,
-            image: first.image.small
+            skuID: details.sku,
+            name: details.name,
+            image: details.image.original
         }))
     }
 
@@ -32,35 +33,34 @@ const SearchDetails = () => {
         navigate('/thanks')
     }
 
-    const first = details
+
     return (
         <>
-            <h1>{first.name}</h1>
+            <h1>{details.name}</h1>
             {/*Shoe image with some description of the shoe*/}
             <div className="row">
                 <img height={400} className="border border-primary col-auto"
-                     src={first.image.original} alt="">
-                </img>
+                     src={`${details.image.original}`} alt=""/>
                 <div className="col-auto w-50">
                     <div className="">
-                        Brand: {first.brand}
+                        Brand: {details.brand}
                     </div>
                     <br/>
                     <div className="">
-                        Release Date: {first.releaseDate}
+                        Release Date: {details.releaseDate}
                     </div>
                     <br/>
                     <div className="">
-                        Color: {first.colorway}
+                        Color: {details.colorway}
                     </div>
                     <br/>
                     <div className="">
-                        Estimated market value: ${first.estimatedMarketValue}
+                        Estimated market value: ${details.estimatedMarketValue}
                     </div>
                 </div>
             </div>
             {/*Postings for the shoe*/}
-            <h3 className="mt-4 mb-4">Listings for {first.name}</h3>
+            <h3 className="mt-4 mb-4">Listings for {details.name}</h3>
             {
                 currentUser &&
                 <div className="input-group mb-4">
