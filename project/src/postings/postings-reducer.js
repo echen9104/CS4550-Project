@@ -4,6 +4,7 @@ import {createPostingThunk, findPostingByUserThunk} from "./postings-thunk";
 const initialState = {
     postings: []
 }
+
 const postingsReducer = createSlice({
     name: 'postings',
     initialState,
