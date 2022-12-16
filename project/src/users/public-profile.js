@@ -8,7 +8,7 @@ import {Link} from "react-router-dom";
 const PublicProfile = () => {
     const {uid} = useParams();
     const {publicProfile} = useSelector((state) => state.users);
-    const {postings} = useSelector((state) => state.postings)
+    const {postings} = useSelector((state) => state.postings);
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(findUserByIdThunk(uid))

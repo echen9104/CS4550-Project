@@ -28,7 +28,6 @@ const usersReducer = createSlice({
             state.loading = false;
         },
         [registerThunk.fulfilled]: (state, action) => {
-
             state.currentUser = action.payload
             state.loading = false;
         },
