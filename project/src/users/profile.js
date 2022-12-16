@@ -28,11 +28,13 @@ const Profile = () => {
                 </button>
             </div>
             <h2 className="mb-4">Hi {currentUser.firstName}!</h2>
-            <h1>Your listings</h1>
+            <h1>Here are your current listings:</h1>
             <ul className="list-group mt-4">
                 {
                     postings && postings.map((post) =>
                         <li key={post._id} className="list-group-item">
+                            <img height={100}
+                                 src={post.image}/>
                             <Link to={`/details/${post.skuID}`}>
                                 ${post.asking} for {post.name}
                             </Link>
