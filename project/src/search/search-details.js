@@ -1,4 +1,4 @@
-import {useParams} from "react-router";
+import {useNavigate, useParams} from "react-router";
 import {useDispatch, useSelector} from "react-redux";
 import searchings from './searchings.json'
 import {useEffect, useState} from "react";
@@ -7,6 +7,7 @@ import {findPostingsBySkuThunk,createPostingThunk,deletePostingThunk} from "../p
 import {Link} from "react-router-dom";
 
 const SearchDetails = () => {
+    const navigate = useNavigate();
     const {skuID} = useParams();
     const [post, setPosting] = useState(0)
     const {details} = useSelector((state) => state.shoes);
@@ -21,13 +22,17 @@ const SearchDetails = () => {
     const first = searchings[0]
 
     const handlePostListingBtn = () => {
-        console.log('1')
         dispatch(createPostingThunk({
             asking: post,
             skuID: first.sku,
             name: first.name,
             image: first.image.small
         }))
+    }
+
+    const handleBuyBtn = (pid) => {
+        dispatch(deletePostingThunk(pid))
+        navigate('/thanks')
     }
 
     return (
@@ -94,7 +99,9 @@ const SearchDetails = () => {
                                         >
                                             Remove
                                         </button> :
-                                        <button className="btn btn-success col-auto">
+                                        currentUser &&
+                                        <button className="btn btn-success col-auto"
+                                                onClick={() => {handleBuyBtn(post._id)}}>
                                             Buy Now
                                         </button>
                                 }

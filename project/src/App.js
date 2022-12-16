@@ -20,6 +20,7 @@ import PublicProfile from "./users/public-profile";
 import postingsReducer from "./postings/postings-reducer";
 import CurrentUser from "./users/current-user";
 import ProtectedRoute from "./users/protected-route";
+import ThankYou from "./thanks";
 
 const store = configureStore({
     reducer: {
@@ -53,6 +54,7 @@ function App() {
                               </ProtectedRoute>
                           }/>
                           <Route path="/profile/:uid" element={<PublicProfile/>}/>
+                          <Route path="/thanks" element={<ThankYou/>}/>
                       </Routes>
                   </CurrentUser>
               </BrowserRouter>
