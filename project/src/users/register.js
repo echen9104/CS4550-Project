@@ -38,7 +38,7 @@ const Register = () => {
                                 <img src={"https://images.pexels.com/photos/2529148/pexels-photo-2529148.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"} width={"250px"} alt={"shoe"} />
                             </div>
                             <div className={'pic2'}>
-                                <img src={"https://images.pexels.com/photos/3490360/pexels-photo-3490360.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"} width={"250px"} alt={"shoe2"}/>
+                                <img src={"https://images.pexels.com/photos/3490360/pexels-photo-3490360.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"} width={"225px"} alt={"shoe2"}/>
                             </div>
                         </div>
                     </div>

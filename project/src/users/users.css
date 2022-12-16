@@ -1,5 +1,5 @@
 .pic2 {
-    position: absolute;
+
     top:0px;
     left:0px;
 
@@ -7,9 +7,9 @@
 
 .pic1 {
     z-index: 1;
-    position: absolute;
+
     bottom:0px;
     right:0px;
-    padding-left: 230px;
+    padding-left: 210px;
 
 }
