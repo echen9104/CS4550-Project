@@ -35,46 +35,44 @@ const SearchDetails = () => {
     const first = details
     return (
         <>
-            <h1>{first && first.name}</h1>
+            <h1>{first.name}</h1>
             {/*Shoe image with some description of the shoe*/}
             <div className="row">
                 <img height={400} className="border border-primary col-auto"
-                     src={first && first.image.original} alt="">
+                     src={first.image.original} alt="">
                 </img>
                 <div className="col-auto w-50">
                     <div className="">
-                        Brand: {first && first.brand}
+                        Brand: {first.brand}
                     </div>
                     <br/>
                     <div className="">
-                        Release Date: {first && first.releaseDate}
+                        Release Date: {first.releaseDate}
                     </div>
                     <br/>
                     <div className="">
-                        Color: {first && first.colorway}
+                        Color: {first.colorway}
                     </div>
                     <br/>
                     <div className="">
-                        Estimated market value: ${first && first.estimatedMarketValue}
+                        Estimated market value: ${first.estimatedMarketValue}
                     </div>
                 </div>
             </div>
             {/*Postings for the shoe*/}
-            <h3 className="mt-4 mb-4">Listings for {first && first.name}</h3>
+            <h3 className="mt-4 mb-4">Listings for {first.name}</h3>
             {
                 currentUser &&
                 <div className="input-group mb-4">
                     <span className="input-group-text">$</span>
-                    <input className="form-control text-end" type="number"
+                    <input className="form-control" type="number"
                            placeholder="Input asking price here"
                            onKeyDown={(e) => {
                                if (e.key === '.') {
                                    e.preventDefault();
                                }
                            }}
-                           onChange={(e) => {
-                               setPosting(e.target.value)
-                           }}/>
+                           onChange={(e) => {setPosting(e.target.value)}} />
                     <button className="btn btn-primary"
                             onClick={() => handlePostListingBtn()}>
                         Add listing
@@ -95,16 +93,12 @@ const SearchDetails = () => {
                                 {
                                     currentUser && (currentUser._id === post.user) ?
                                         <button className="btn btn-danger col-2"
-                                                onClick={() => {
-                                                    dispatch(deletePostingThunk(post._id))
-                                                }}>
+                                                onClick={() => {dispatch(deletePostingThunk(post._id))}}>
                                             Remove
                                         </button> :
                                         currentUser &&
                                         <button className="btn btn-success col-2"
-                                                onClick={() => {
-                                                    handleBuyBtn(post._id)
-                                                }}>
+                                                onClick={() => {handleBuyBtn(post._id)}}>
                                             Buy Now
                                         </button>
                                 }

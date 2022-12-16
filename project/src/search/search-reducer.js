@@ -16,12 +16,7 @@ const searchReducer = createSlice({
             state.shoes = action.payload
         },
         [findShoeBySkuThunk.fulfilled]: (state, action) => {
-            console.log(action.payload[0])
             state.details = action.payload[0]
-            state.loading = false
-        },
-        [findShoeBySkuThunk.pending]: (state, action) => {
-            state.loading = true
         }
     }
 })
