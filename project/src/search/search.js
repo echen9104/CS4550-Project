@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 
 const Search = () => {
     const [searchTerm, setSearchTerm] = useState('')
-    const {shoes, loading} = useSelector((state) => state.shoes)
+    const {shoes} = useSelector((state) => state.shoes)
     const dispatch = useDispatch()
     useEffect(() => {
         dispatch(findShoeBySearchTermThunk(searchTerm))}, [])

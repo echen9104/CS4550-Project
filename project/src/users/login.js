@@ -8,7 +8,6 @@ const Login = () => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const dispatch = useDispatch()
-    // const history = useHistory()
     const handleLoginBtn = () => {
         try {
             console.log("Attempting to log in")

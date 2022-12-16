@@ -5,7 +5,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 
 const Users = () => {
-    const {users, loading} = useSelector((state) => state.users)
+    const {users} = useSelector((state) => state.users)
     const {currentUser} = useSelector((state) => state.users)
     const dispatch = useDispatch()
     useEffect(() => {

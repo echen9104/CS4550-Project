@@ -4,13 +4,12 @@ import {useEffect, useState} from "react";
 import {findShoeBySkuThunk} from "./search-thunk";
 import {findPostingsBySkuThunk,createPostingThunk,deletePostingThunk} from "../postings/postings-thunk";
 import {Link} from "react-router-dom";
-import searchings from './searchings.json'
 
 const SearchDetails = () => {
     const navigate = useNavigate();
     const {skuID} = useParams();
     const [post, setPosting] = useState(0)
-    const {details, loading} = useSelector((state) => state.shoes);
+    const {details} = useSelector((state) => state.shoes);
     const {postings} = useSelector((state) => state.postings)
     const {currentUser} = useSelector((state) => state.users);
     const dispatch = useDispatch();
