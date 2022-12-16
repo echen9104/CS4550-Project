@@ -13,8 +13,11 @@ const Search = () => {
 
     return(
         <>
+            <img src="https://static.nike.com/a/images/f_auto/dpr_1.0,cs_srgb/w_1824,c_limit/5f205755-7e49-42ef-84c6-c2c6a85fd000/nike-just-do-it.jpg"
+                 className="img-fluid mb-3" alt=""/>
             <div className="input-group">
                 <input className="form-control w-75"
+                       placeholder={"Search For Your Shoe"}
                        onChange={(e) => {
                            setSearchTerm(e.target.value)
                        }}
@@ -24,6 +27,8 @@ const Search = () => {
                     Search
                 </button>
             </div>
+
+
             <ul className="mt-4 list-group">
                 {
                     shoes && shoes.map((shoe) =>
