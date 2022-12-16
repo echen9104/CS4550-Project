@@ -1,5 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit";
-import {createPostingThunk, findPostingByUserThunk} from "./postings-thunk";
+import {createPostingThunk, findPostingsByUserThunk, findPostingsBySkuThunk} from "./postings-thunk";
 
 const initialState = {
     postings: []
@@ -13,7 +13,10 @@ const postingsReducer = createSlice({
         [createPostingThunk.fulfilled]: (state, action) => {
             state.postings.push(action.payload)
         },
-        [findPostingByUserThunk.fulfilled]: (state, action) => {
+        [findPostingsByUserThunk.fulfilled]: (state, action) => {
+            state.postings = action.payload
+        },
+        [findPostingsBySkuThunk.fulfilled]: (state, action) => {
             state.postings = action.payload
         }
     }
