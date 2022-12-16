@@ -51,7 +51,12 @@ const Profile = () => {
                     )
                 }
             </ul>
-            
+            <h1 className="mb-4">Edit profile details</h1>
+            <div className="input-group mb-4 form-check form-switch">
+                <input className="form-check-input" type="checkbox"/>
+            </div>
+            <br/>
+            <br/><br/><br/>
         </>
     )
 }
