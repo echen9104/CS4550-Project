@@ -2,7 +2,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {logoutThunk} from "./users-thunk";
 import {useNavigate} from "react-router";
 import {Link} from "react-router-dom";
-import {findPostingByUserThunk} from "../postings/postings-thunk";
+import {findPostingsByUserThunk} from "../postings/postings-thunk";
 import {useEffect} from "react";
 
 const Profile = () => {
@@ -10,9 +10,8 @@ const Profile = () => {
     const {currentUser} = useSelector((state) => state.users);
     const {postings} = useSelector((state) => state.postings);
     const dispatch = useDispatch();
-    console.log(currentUser._id)
     useEffect(() => {
-        dispatch(findPostingByUserThunk(currentUser._id))
+        dispatch(findPostingsByUserThunk(currentUser._id))
     }, [])
     const handleLogoutBtn = () => {
         dispatch(logoutThunk())
@@ -35,7 +34,7 @@ const Profile = () => {
                     postings && postings.map((post) =>
                         <li key={post._id} className="list-group-item">
                             <Link to={`/details/${post.skuID}`}>
-                                ${post.asking} for {post.skuID}
+                                ${post.asking} for {post.name}
                             </Link>
                         </li>
                     )

@@ -2,7 +2,7 @@ import {useParams} from "react-router";
 import {useSelector, useDispatch} from "react-redux";
 import {useEffect} from "react";
 import {findUserByIdThunk} from "./users-thunk";
-import {findPostingByUserThunk} from "../postings/postings-thunk";
+import {findPostingsByUserThunk} from "../postings/postings-thunk";
 import {Link} from "react-router-dom";
 
 const PublicProfile = () => {
@@ -12,7 +12,7 @@ const PublicProfile = () => {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(findUserByIdThunk(uid))
-        dispatch(findPostingByUserThunk(uid))
+        dispatch(findPostingsByUserThunk(uid))
     }, [])
 
     return (
