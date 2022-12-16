@@ -13,3 +13,13 @@
     padding-left: 210px;
 
 }
+
+@media (max-width: 991px){
+    .hidden-mob {
+        display: none;
+    }
+
+    .input-items {
+        position: center;
+    }
+}
