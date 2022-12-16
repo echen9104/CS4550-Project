@@ -46,3 +46,8 @@ export const findAllUsers = async () => {
     return response.data
 }
 
+export const updateUser = async (uid, userUpdates) => {
+    const response = await api.put(`USER_API_URL/${uid}`, userUpdates)
+    return userUpdates
+}
+
