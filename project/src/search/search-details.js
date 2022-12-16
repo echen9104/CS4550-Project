@@ -4,7 +4,6 @@ import {useEffect, useState} from "react";
 import {findShoeBySkuThunk} from "./search-thunk";
 import {findPostingsBySkuThunk,createPostingThunk,deletePostingThunk} from "../postings/postings-thunk";
 import {Link} from "react-router-dom";
-import {Eye, EyeFill} from "react-bootstrap-icons";
 import searchings from './searchings.json'
 
 const SearchDetails = () => {
@@ -93,15 +92,14 @@ const SearchDetails = () => {
                                     Listed by user:
                                     <Link to={`/profile/${post.user}`}>{post.user}</Link>
                                 </div>
-                                <Eye className="col-1" size={40}/>
                                 {
                                     currentUser && (currentUser._id === post.user) ?
-                                        <button className="btn btn-danger col-auto"
+                                        <button className="btn btn-danger col-2"
                                                 onClick={() => {dispatch(deletePostingThunk(post._id))}}>
                                             Remove
                                         </button> :
                                         currentUser &&
-                                        <button className="btn btn-success col-auto"
+                                        <button className="btn btn-success col-2"
                                                 onClick={() => {handleBuyBtn(post._id)}}>
                                             Buy Now
                                         </button>

@@ -17,6 +17,12 @@ export const register = async (user) => {
     return newUser
 }
 
+export const deleteUser = async (uid) => {
+    const response = await api.delete(`${USER_API_URL}/${uid}`)
+    const status = response.data
+    return uid
+}
+
 export const login = async (user) => {
     try {
         const response = await api.post(`${BASE_API_URL}/login`, user)

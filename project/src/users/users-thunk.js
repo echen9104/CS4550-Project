@@ -1,5 +1,5 @@
 import {createAsyncThunk} from "@reduxjs/toolkit";
-import {findAllUsers, findUserById, login, logout, profile, register} from "./users-service";
+import {deleteUser, findAllUsers, findUserById, login, logout, profile, register} from "./users-service";
 
 
 export const logoutThunk = createAsyncThunk(
@@ -16,6 +16,10 @@ export const loginThunk = createAsyncThunk(
 
 export const registerThunk = createAsyncThunk(
     'register', async (user) => await register(user))
+
+export const deleteUserThunk = createAsyncThunk(
+    'deleteUser', async (uid) => await deleteUser(uid)
+)
 
 export const findAllUsersThunk = createAsyncThunk(
     'findAllUsers', async () => await findAllUsers())

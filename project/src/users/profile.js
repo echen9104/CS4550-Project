@@ -5,6 +5,8 @@ import {Link} from "react-router-dom";
 import {deletePostingThunk, findPostingsByUserThunk} from "../postings/postings-thunk";
 import {useEffect} from "react";
 import Watchlist from "../watchlist";
+import {TrashFill} from "react-bootstrap-icons";
+import './profile.css';
 
 const Profile = () => {
     const navigate = useNavigate();
@@ -34,15 +36,18 @@ const Profile = () => {
                 {
                     postings && postings.map((post) =>
                         <li key={post._id} className="list-group-item">
-                            <img height={100}
-                                 src={post.image}/>
-                            <Link to={`/details/${post.skuID}`}>
-                                ${post.asking} for {post.name}
-                                <button className="btn btn-danger float-end"
-                                        onClick={() => {dispatch(deletePostingThunk(post._id))}}>
-                                    Remove
-                                </button>
-                            </Link>
+                            <div className="row">
+                                <div className="col-9">
+                                    <img height={100}
+                                         src={post.image}/>
+                                    <Link to={`/details/${post.skuID}`}>
+                                        ${post.asking} for {post.name}
+                                    </Link>
+                                </div>
+                                <div className="col-auto"></div>
+                                <TrashFill className="col-2 nudge-down" size={50}
+                                        onClick={() => {dispatch(deletePostingThunk(post._id))}}/>
+                            </div>
                         </li>
                     )
                 }
