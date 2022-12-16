@@ -47,7 +47,11 @@ export const findAllUsers = async () => {
 }
 
 export const updateUser = async (uid, userUpdates) => {
-    const response = await api.put(`USER_API_URL/${uid}`, userUpdates)
+    console.log(`${USER_API_URL}/${uid}`)
+    console.log(uid)
+    console.log(userUpdates)
+
+    const response = await api.put(`${USER_API_URL}/${uid}`, userUpdates)
     return userUpdates
 }
 

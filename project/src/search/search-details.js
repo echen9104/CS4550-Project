@@ -33,8 +33,7 @@ const SearchDetails = () => {
         navigate('/thanks')
     }
 
-    // const first = details
-    const first = searchings[1]
+    const first = details
     return (
         <>
             <h1>{first.name}</h1>

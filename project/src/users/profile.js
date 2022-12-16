@@ -1,14 +1,15 @@
 import {useDispatch, useSelector} from "react-redux";
-import {logoutThunk} from "./users-thunk";
+import {logoutThunk, updateUserThunk} from "./users-thunk";
 import {useNavigate} from "react-router";
 import {Link} from "react-router-dom";
 import {deletePostingThunk, findPostingsByUserThunk} from "../postings/postings-thunk";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import {TrashFill} from "react-bootstrap-icons";
 import './profile.css';
 
 const Profile = () => {
     const navigate = useNavigate();
+    const [newEmail, setNewEmail] = useState('');
     const {currentUser} = useSelector((state) => state.users);
     const {postings} = useSelector((state) => state.postings);
     const dispatch = useDispatch();
@@ -51,12 +52,18 @@ const Profile = () => {
                     )
                 }
             </ul>
-            <h1 className="mb-4">Edit profile details</h1>
-            <div className="input-group mb-4 form-check form-switch">
-                <input className="form-check-input" type="checkbox"/>
+            <h1 className="mb-4">Edit Email</h1>
+            <div id="email" className="mb-4 input-group">
+                <input className="w-25" type="text" placeholder="Enter new email"
+                       onChange={(e) => {setNewEmail(e.target.value)}}/>
+                <button className="btn btn-success"
+                        onClick={() => {dispatch(updateUserThunk({
+                            email: newEmail,
+                            uid: currentUser._id
+                        }))}}>
+                    Save
+                </button>
             </div>
-            <br/>
-            <br/><br/><br/>
         </>
     )
 }

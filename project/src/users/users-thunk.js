@@ -22,7 +22,10 @@ export const deleteUserThunk = createAsyncThunk(
 )
 
 export const updateUserThunk = createAsyncThunk(
-    'updateUser', async (uid, updates) => await updateUser(uid, updates)
+    'updateUser', async (args) => {
+        const {uid, email} = args
+        await updateUser(uid, {email: email})
+    }
 )
 
 export const findAllUsersThunk = createAsyncThunk(
