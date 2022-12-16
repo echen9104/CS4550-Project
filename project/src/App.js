@@ -18,6 +18,8 @@ import searchReducer from "./search/search-reducer";
 import SearchDetails from "./search/search-details";
 import PublicProfile from "./users/public-profile";
 import postingsReducer from "./postings/postings-reducer";
+import CurrentUser from "./users/current-user";
+import ProtectedRoute from "./users/protected-route";
 
 const store = configureStore({
     reducer: {
@@ -35,18 +37,24 @@ function App() {
               <h4 className="text-center">Buy and sell sneakers</h4>
               <hr/>
               <BrowserRouter>
-                  <Navigation/>
-                  <hr className="mb-4"/>
-                  <Routes>
-                      <Route index element={<Home/>}/>
-                      <Route path="/search" element={<Search/>}/>
-                      <Route path="/login" element={<Login/>}/>
-                      <Route path="/register" element={<Register/>}/>
-                      <Route path="/users" element={<Users/>}/>
-                      <Route path="/details/:skuID" element={<SearchDetails/>}/>
-                      <Route path="/profile" element={<Profile/>}/>
-                      <Route path="/profile/:uid" element={<PublicProfile/>}/>
-                  </Routes>
+                  <CurrentUser>
+                      <Navigation/>
+                      <hr className="mb-4"/>
+                      <Routes>
+                          <Route index element={<Home/>}/>
+                          <Route path="/search" element={<Search/>}/>
+                          <Route path="/login" element={<Login/>}/>
+                          <Route path="/register" element={<Register/>}/>
+                          <Route path="/users" element={<Users/>}/>
+                          <Route path="/details/:skuID" element={<SearchDetails/>}/>
+                          <Route path="/profile" element={
+                              <ProtectedRoute>
+                                  <Profile/>
+                              </ProtectedRoute>
+                          }/>
+                          <Route path="/profile/:uid" element={<PublicProfile/>}/>
+                      </Routes>
+                  </CurrentUser>
               </BrowserRouter>
           </Provider>
       </div>
