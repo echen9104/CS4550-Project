@@ -10,7 +10,7 @@ const SearchDetails = () => {
     const navigate = useNavigate();
     const {skuID} = useParams();
     const [post, setPosting] = useState(0)
-    const {details} = useSelector((state) => state.shoes);
+    const {details, loading} = useSelector((state) => state.shoes);
     const {postings} = useSelector((state) => state.postings)
     const {currentUser} = useSelector((state) => state.users);
     const dispatch = useDispatch();
@@ -36,44 +36,46 @@ const SearchDetails = () => {
     const first = details
     return (
         <>
-            <h1>{first.name}</h1>
+            <h1>{first && first.name}</h1>
             {/*Shoe image with some description of the shoe*/}
             <div className="row">
                 <img height={400} className="border border-primary col-auto"
-                     src={first.image.original} alt="">
+                     src={first && first.image.original} alt="">
                 </img>
                 <div className="col-auto w-50">
                     <div className="">
-                        Brand: {first.brand}
+                        Brand: {first && first.brand}
                     </div>
                     <br/>
                     <div className="">
-                        Release Date: {first.releaseDate}
+                        Release Date: {first && first.releaseDate}
                     </div>
                     <br/>
                     <div className="">
-                        Color: {first.colorway}
+                        Color: {first && first.colorway}
                     </div>
                     <br/>
                     <div className="">
-                        Estimated market value: ${first.estimatedMarketValue}
+                        Estimated market value: ${first && first.estimatedMarketValue}
                     </div>
                 </div>
             </div>
             {/*Postings for the shoe*/}
-            <h3 className="mt-4 mb-4">Listings for {first.name}</h3>
+            <h3 className="mt-4 mb-4">Listings for {first && first.name}</h3>
             {
                 currentUser &&
                 <div className="input-group mb-4">
                     <span className="input-group-text">$</span>
-                    <input className="form-control" type="number"
+                    <input className="form-control text-end" type="number"
                            placeholder="Input asking price here"
                            onKeyDown={(e) => {
                                if (e.key === '.') {
                                    e.preventDefault();
                                }
                            }}
-                           onChange={(e) => {setPosting(e.target.value)}} />
+                           onChange={(e) => {
+                               setPosting(e.target.value)
+                           }}/>
                     <button className="btn btn-primary"
                             onClick={() => handlePostListingBtn()}>
                         Add listing
@@ -94,12 +96,16 @@ const SearchDetails = () => {
                                 {
                                     currentUser && (currentUser._id === post.user) ?
                                         <button className="btn btn-danger col-2"
-                                                onClick={() => {dispatch(deletePostingThunk(post._id))}}>
+                                                onClick={() => {
+                                                    dispatch(deletePostingThunk(post._id))
+                                                }}>
                                             Remove
                                         </button> :
                                         currentUser &&
                                         <button className="btn btn-success col-2"
-                                                onClick={() => {handleBuyBtn(post._id)}}>
+                                                onClick={() => {
+                                                    handleBuyBtn(post._id)
+                                                }}>
                                             Buy Now
                                         </button>
                                 }
