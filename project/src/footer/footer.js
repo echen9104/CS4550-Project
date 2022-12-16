@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <footer>
             <hr/>
-            <div className={'container'}>
+            <div className={'ms-1 container'}>
                 <div className={"row"}>
                     <div className={'col-md-4 col-sm-5'}>
                         <form className={"float-right"}>
