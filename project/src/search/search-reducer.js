@@ -1,9 +1,10 @@
 import {createSlice} from "@reduxjs/toolkit";
-import {findShoeBySearchTermThunk} from "./search-thunk";
+import {findShoeBySearchTermThunk, findShoeBySkuThunk} from "./search-thunk";
 
 const initialState = {
     shoes: [],
-    loading: false
+    loading: false,
+    details: {}
 }
 
 const searchReducer = createSlice({
@@ -15,6 +16,10 @@ const searchReducer = createSlice({
             console.log(action.payload)
             state.shoes = action.payload
         },
+        [findShoeBySkuThunk.fulfilled]: (state, action) => {
+            console.log(action.payload)
+            state.details = action.payload
+        }
     }
 })
 
