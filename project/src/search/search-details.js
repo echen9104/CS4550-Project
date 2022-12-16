@@ -4,6 +4,7 @@ import {useEffect, useState} from "react";
 import {findShoeBySkuThunk} from "./search-thunk";
 import {findPostingsBySkuThunk,createPostingThunk,deletePostingThunk} from "../postings/postings-thunk";
 import {Link} from "react-router-dom";
+import {Eye, EyeFill} from "react-bootstrap-icons";
 import searchings from './searchings.json'
 
 const SearchDetails = () => {
@@ -37,7 +38,6 @@ const SearchDetails = () => {
     const first = searchings[1]
     return (
         <>
-            first &&
             <h1>{first.name}</h1>
             {/*Shoe image with some description of the shoe*/}
             <div className="row">
@@ -88,16 +88,16 @@ const SearchDetails = () => {
                     postings && postings.map((post) =>
                         <li key={post._id} className="list-group-item">
                             <div className="row">
-                                <div className="col-10">
+                                <div className="col-9">
                                     <div>Asking for ${post.asking}</div>
                                     Listed by user:
                                     <Link to={`/profile/${post.user}`}>{post.user}</Link>
                                 </div>
+                                <Eye className="col-1" size={40}/>
                                 {
                                     currentUser && (currentUser._id === post.user) ?
                                         <button className="btn btn-danger col-auto"
-                                                onClick={() => {dispatch(deletePostingThunk(post._id))}}
-                                        >
+                                                onClick={() => {dispatch(deletePostingThunk(post._id))}}>
                                             Remove
                                         </button> :
                                         currentUser &&

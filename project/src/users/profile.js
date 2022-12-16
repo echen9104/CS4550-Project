@@ -4,6 +4,7 @@ import {useNavigate} from "react-router";
 import {Link} from "react-router-dom";
 import {deletePostingThunk, findPostingsByUserThunk} from "../postings/postings-thunk";
 import {useEffect} from "react";
+import Watchlist from "../watchlist";
 
 const Profile = () => {
     const navigate = useNavigate();
@@ -29,7 +30,7 @@ const Profile = () => {
             </div>
             <h2 className="mb-4">Hi {currentUser.firstName}!</h2>
             <h1>Here are your current listings:</h1>
-            <ul className="list-group mt-4">
+            <ul className="list-group mt-4 mb-4">
                 {
                     postings && postings.map((post) =>
                         <li key={post._id} className="list-group-item">
@@ -47,6 +48,7 @@ const Profile = () => {
                 }
             </ul>
 
+            <Watchlist uid={currentUser._id} p1="v1" p2="v2"/>
         </>
     )
 }

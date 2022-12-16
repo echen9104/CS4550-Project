@@ -21,12 +21,14 @@ import postingsReducer from "./postings/postings-reducer";
 import CurrentUser from "./users/current-user";
 import ProtectedRoute from "./users/protected-route";
 import ThankYou from "./thanks";
+import watchlistReducer from "./watchlist/watchlist-reducer";
 
 const store = configureStore({
     reducer: {
         users: usersReducer,
         shoes: searchReducer,
         postings: postingsReducer,
+        watchings: watchlistReducer,
     }
 })
 
