@@ -23,7 +23,6 @@ import ProtectedRoute from "./users/protected-route";
 import ThankYou from "./thanks";
 import watchlistReducer from "./watchlist/watchlist-reducer";
 import Footer from "./footer/footer";
-import ChatBubble from "./chatbubble/chat";
 
 const store = configureStore({
     reducer: {
