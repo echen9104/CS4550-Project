@@ -61,7 +61,9 @@ function App() {
                       </Routes>
                   </CurrentUser>
               </BrowserRouter>
-              <Footer/>
+              <div className={'container'}>
+                  <Footer/>
+              </div>
 
               <br/>
           </Provider>
