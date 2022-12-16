@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from "react-redux";
 import searchings from './searchings.json'
 import {useEffect, useState} from "react";
 import {findShoeBySkuThunk} from "./search-thunk";
-import {findPostingsBySkuThunk,createPostingThunk} from "../postings/postings-thunk";
+import {findPostingsBySkuThunk,createPostingThunk,deletePostingThunk} from "../postings/postings-thunk";
 import {Link} from "react-router-dom";
 
 const SearchDetails = () => {
@@ -36,7 +36,7 @@ const SearchDetails = () => {
             {/*Shoe image with some description of the shoe*/}
             <div className="row">
                 <img height={400} className="border border-primary col-auto"
-                     src={first.image.original}>
+                     src={first.image.original} alt="">
                 </img>
                 <div className="col-auto w-50">
                     <div className="">
@@ -62,8 +62,13 @@ const SearchDetails = () => {
                 currentUser &&
                 <div className="input-group mb-4">
                     <span className="input-group-text">$</span>
-                    <input className="form-control w-75" type="number"
+                    <input className="form-control" type="number"
                            placeholder="Input asking price here"
+                           onKeyDown={(e) => {
+                               if (e.key === '.') {
+                                   e.preventDefault();
+                               }
+                           }}
                            onChange={(e) => {setPosting(e.target.value)}} />
                     <button className="btn btn-primary"
                             onClick={() => handlePostListingBtn()}>
@@ -76,8 +81,24 @@ const SearchDetails = () => {
                 {
                     postings && postings.map((post) =>
                         <li key={post._id} className="list-group-item">
-                            <div>Asking for ${post.asking}</div>
-                            <Link to={`/profile/${post.user}`}>Listed by {post.user}</Link>
+                            <div className="row">
+                                <div className="col-10">
+                                    <div>Asking for ${post.asking}</div>
+                                    Listed by user:
+                                    <Link to={`/profile/${post.user}`}>{post.user}</Link>
+                                </div>
+                                {
+                                    currentUser && (currentUser._id === post.user) ?
+                                        <button className="btn btn-danger col-auto"
+                                                onClick={() => {dispatch(deletePostingThunk(post._id))}}
+                                        >
+                                            Remove
+                                        </button> :
+                                        <button className="btn btn-success col-auto">
+                                            Buy Now
+                                        </button>
+                                }
+                            </div>
                         </li>
                     )
                 }

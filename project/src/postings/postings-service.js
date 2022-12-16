@@ -19,3 +19,9 @@ export const findPostingsBySku = async (sku) => {
     const response = await api.get(`${POSTING_API_URL}/${sku}`)
     return response.data
 }
+
+export const deletePosting = async (pid) => {
+    const response = await api.delete(`${POSTING_API_URL}/${pid}`)
+    const status = response.data
+    return pid
+}
