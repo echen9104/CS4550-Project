@@ -66,6 +66,8 @@ const Register = () => {
                             <option value="Customer">Customer</option>
                             <option value="Admin">Admin</option>
                         </select>
+                        <br/>
+                        <p className={"w-50 offset-3"}>By continuing, I agree to SHOESCAN’s Privacy Policy and Terms of Use.</p>
                         <button className="btn btn-primary mt-3 offset-3" onClick={handleRegisterBtn}>
                             Register
                         </button>

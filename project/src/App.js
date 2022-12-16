@@ -22,6 +22,7 @@ import CurrentUser from "./users/current-user";
 import ProtectedRoute from "./users/protected-route";
 import ThankYou from "./thanks";
 import watchlistReducer from "./watchlist/watchlist-reducer";
+import Footer from "./footer/footer";
 
 const store = configureStore({
     reducer: {
@@ -60,6 +61,9 @@ function App() {
                       </Routes>
                   </CurrentUser>
               </BrowserRouter>
+              <Footer/>
+
+              <br/>
           </Provider>
       </div>
   );

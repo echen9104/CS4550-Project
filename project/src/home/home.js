@@ -14,7 +14,7 @@ const Home = () => {
             }
             <div className="card mt-4 mb-4">
                 <img src="https://images.complex.com/complex/images/c_crop,h_1077,w_1915,x_0,y_0/c_fill,dpr_2.0,f_auto,q_auto,w_1400/fl_lossy,pg_1/dcakbazum3qa5aplqdis/most-anticipated-sneaker-releases-of-2022?fimg-ssr"
-                     className="d-block w-100 card-img-top" height={450} alt=""/>
+                     className="img-fluid" alt=""/>
                 <div className="card-body">
                     <div className="card-title">
                         <span className="fs-1">Most anticipated sneakers of 2022</span>

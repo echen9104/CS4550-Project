@@ -23,13 +23,17 @@ const Login = () => {
     }
     return (
         <>
+            <br/>
             <h1 className="text-center">Login here</h1>
+            <br/>
             <input onChange={(e) => setUsername(e.target.value)}
                    className="form-control border border-primary w-50 offset-3"
                    placeholder="Username" value={username}/>
             <input onChange={(e) => setPassword(e.target.value)} type="password"
                    className="mt-3 form-control border border-primary w-50 offset-3"
                    placeholder="Password" value={password}/>
+            <br/>
+            <p className={"w-50 offset-3"}>By continuing, I agree to SHOESCAN’s Privacy Policy and Terms of Use.</p>
             <button className="btn btn-primary mt-3 offset-3" onClick={handleLoginBtn}>
                 Login
             </button>
