@@ -4,7 +4,6 @@ import {useNavigate} from "react-router";
 import {Link} from "react-router-dom";
 import {deletePostingThunk, findPostingsByUserThunk} from "../postings/postings-thunk";
 import {useEffect} from "react";
-import Watchlist from "../watchlist";
 import {TrashFill} from "react-bootstrap-icons";
 import './profile.css';
 
@@ -52,8 +51,7 @@ const Profile = () => {
                     )
                 }
             </ul>
-
-            <Watchlist uid={currentUser._id} p1="v1" p2="v2"/>
+            
         </>
     )
 }
